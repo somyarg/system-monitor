@@ -9,14 +9,14 @@ format:
 build:
 	mkdir -p build
 	cd build && \
-	cmake .. && \
+	cmake -D CMAKE_C_COMPILER=gcc-9 -D CMAKE_CXX_COMPILER=g++-9 .. && \
 	make
 
 .PHONY: debug
 debug:
 	mkdir -p build
 	cd build && \
-	cmake -DCMAKE_BUILD_TYPE=debug .. && \
+	cmake -DCMAKE_BUILD_TYPE=debug -D CMAKE_C_COMPILER=gcc-9 -D CMAKE_CXX_COMPILER=g++-9 .. && \
 	make
 
 .PHONY: clean
